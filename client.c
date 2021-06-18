@@ -6,17 +6,11 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 07:52:55 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/06/18 07:06:36 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/06/18 07:18:46 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
-
-void	usage(void)
-{
-	write(1, "Try: ./client [server-pid] [msg]\n", 33);
-	exit(0);
-}
 
 /* uint8_t is a 8bits integer
 ** left bitshifting through 128 decimal, representing all
