@@ -6,18 +6,19 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 07:52:55 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/06/18 07:18:46 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/06/18 07:23:35 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-/* uint8_t is a 8bits integer
+/* uint8_t is a 8bits integer = 1 byte
 ** left bitshifting through 128 decimal, representing all
 ** unicode chars 
 **
 ** right bitshifting back, basically count/2^n where n
 ** takes 1, 2, 3 and so on...
+** 1 char is 1 byte
 */
 
 void	send_char(int pid, unsigned char byte)
@@ -38,12 +39,11 @@ void	send_char(int pid, unsigned char byte)
 				perror("bad pid\n");
 		}
 		count >>= 1;
-		usleep(400);
+		usleep(100);
 	}
 }
 
 /* action takes the pid and the message, and sends characters to that pid */
-/* 1 char is 1 byte, so we send an 8 bit integer which is the equivalent */
 
 void	action(char *str_pid, char *msg)
 {
